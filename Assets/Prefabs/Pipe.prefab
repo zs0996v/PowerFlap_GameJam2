@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7311989616032042547}
   - component: {fileID: 3604897181872075418}
   m_Layer: 0
-  m_Name: Middle
+  m_Name: Middle Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -407,5 +407,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6711289f887a2aa4ca1c60be1fc5f8b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  baseMoveSpeed: 5
   deadZone: -45

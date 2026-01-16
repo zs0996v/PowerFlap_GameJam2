@@ -10,21 +10,35 @@ public class LogicScript : MonoBehaviour
     public int playerScore;
     public TMP_Text scoreText;
     public GameObject gameOverScreen;
+    public static bool gameIsOver = false;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
-        playerScore = playerScore + scoreToAdd;
-        scoreText.text = playerScore.ToString();
+        if (!gameIsOver)
+        {
+            playerScore += scoreToAdd;
+            scoreText.text = playerScore.ToString();
+        }
     }
 
     public void restartGame()
     {
+        gameIsOver = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void gameOver()
     {
+        if (gameIsOver) return;
+
+        gameIsOver = true;
         gameOverScreen.SetActive(true);
+        AudioManager.instance.PlayGameOverSound();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
