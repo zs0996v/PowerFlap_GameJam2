@@ -25,6 +25,9 @@ public class LogicScript : MonoBehaviour
     public void restartGame()
     {
         gameIsOver = false;
+
+        BoostPowerUpScript.StopBoost();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
